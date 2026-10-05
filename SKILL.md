@@ -19,9 +19,26 @@ This skill borrows that same discipline for a different reader: an **AI agent or
 
 This skill is not for creative or marketing copy — STE is deliberately flat and literal. Do not apply it to text where voice, nuance, or persuasion is the point.
 
-## Two Modes
+## Modes
 
-Pick a mode before rewriting. If the user does not say which, infer it from the text type. Keep the choice internal unless the user asks for the rule table (see Output Format).
+**Default: Relaxed (about 80% STE).** Unless the user asks for Strict, apply the rules at roughly 80% strength. Follow the spirit of every rule, but accept readable exceptions. The goal is text that is clear and unambiguous but still reads like natural English.
+
+Relaxed mode means:
+- Sentence length caps are targets, not limits. Going about 20% over (for example 24 words for an instruction) is fine when splitting would hurt flow.
+- Phrasal verbs, passive voice, and noun clusters are acceptable when the plain alternative is awkward. Still fix those that cause real ambiguity.
+- Semicolons and em dashes are acceptable in moderation. Prefer separate sentences.
+- Present perfect and other compound tenses are acceptable when natural.
+- Lexical rules (one word, one meaning) stay advisory. Keep terms consistent, but do not hunt for synonyms of every word.
+- Never relax these: keep hedges and modality, keep every fact and condition, avoid marketing adjectives, and avoid synonym rotation for key terms.
+- Do not rewrite sentences that already read clearly.
+
+This skill is tool-neutral. It applies to any agent harness (Copilot, Claude Code, Codex, Cursor, and others).
+
+## Two Strictness Levels
+
+Pick a level before rewriting. If the user does not say which, use Relaxed for general text. Use Strict only when the user asks for it ("strict", "full STE", "100%"). Keep the choice internal unless the user asks for the rule table (see Output Format).
+
+Below, "STE-flavored" is the Relaxed level. The rules in the Core Rewrite Rules tables describe full strength. Relaxed applies them as described above.
 
 **Strict** — procedures, error messages, tool and function descriptions, inter-agent instructions, safety text. Anywhere a wrong reading has a cost. Apply every rule below, including the hard length caps and one-word-one-meaning discipline.
 

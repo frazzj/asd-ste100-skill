@@ -1,6 +1,6 @@
 # ASD-STE100 Skill — Simplified Technical English for Agent Output
 
-A Claude Code skill that rewrites dense, ambiguous English into [ASD-STE100 Simplified Technical English](https://www.asd-ste100.org/) (STE) — the controlled-language standard the aerospace and defense industry built so aircraft maintenance instructions cannot be misread.
+An agent skill (works with Copilot, Claude Code, Codex, Cursor, and other harnesses that read `SKILL.md`) that rewrites dense, ambiguous English into [ASD-STE100 Simplified Technical English](https://www.asd-ste100.org/) (STE) — the controlled-language standard the aerospace and defense industry built so aircraft maintenance instructions cannot be misread.
 
 This skill repurposes that same discipline for a different reader: an **AI agent** parsing another agent's output, a tool description, an error message, or an inter-agent instruction, with no human in the loop to resolve ambiguity.
 
@@ -62,10 +62,10 @@ Update later with `npx skills update`.
 ### Clone
 
 ```bash
-git clone https://github.com/danyuchn/asd-ste100-skill ~/.claude/skills/asd-ste100
+git clone https://github.com/danyuchn/asd-ste100-skill ~/.copilot/skills/asd-ste100
 ```
 
-This clones the repo into `~/.claude/skills/`, making the skill available in every Claude Code project. Best for contributors and anyone who wants a live checkout that updates with `git pull`.
+This clones the repo into a user-level skills folder (`~/.copilot/skills/`, `~/.claude/skills/`, or `~/.agents/skills/`), making the skill available in every project for that harness. Best for contributors and anyone who wants a live checkout that updates with `git pull`.
 
 ## Usage
 
@@ -77,7 +77,7 @@ Rewrite this error message so an agent can't misparse it
 Apply ASD-STE100 to this instruction
 ```
 
-Or paste text and ask Claude to "disambiguate this" / "apply STE100 to this" / "reduce ambiguity in this output."
+Or paste text and ask your agent to "disambiguate this" / "apply STE100 to this" / "reduce ambiguity in this output."
 
 You get the rewritten text back and nothing else. To see which rules were applied, add "show the diff" or "explain the changes" to the request.
 
